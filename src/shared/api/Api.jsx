@@ -14,10 +14,10 @@ export const getTrending = async () => {
 
 // поиск кинофильма по ключевому слову
 
-export const getSearch = async (query, page) => {
-  console.log(query);
+export const getSearch = async (name, page) => {
+  console.log(name);
   const { data } = await axios.get(
-    `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=${page}&query=${query}&include_adult=false`
+    `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=${page}&query=${name}&include_adult=false`
   );
   return data;
 };

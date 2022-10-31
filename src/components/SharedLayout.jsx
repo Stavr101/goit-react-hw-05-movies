@@ -7,7 +7,7 @@ export const SharedLayout = () => {
   return (
     <Box>
       <AppBar />
-      <Outlet />
+      {/* <Outlet /> */}
     </Box>
   );
 };

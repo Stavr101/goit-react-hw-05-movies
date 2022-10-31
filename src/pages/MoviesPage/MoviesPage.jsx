@@ -16,16 +16,24 @@ export default function MoviesPage() {
   const [page, setPage] = useState(1);
   const isPosts = Boolean(movies.length);
   const [totalResults, setTotalResults] = useState(true);
+  const [name, setName] = useState('');
 
   const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get('query');
+  const query = searchParams.get('');
 
-  const onSearch = search => {
-    setSearchParams({ query: search });
-    setMovies([]);
-  };
+  // const onSearch = search => {
+  //   setSearchParams({ query: search });
+  //   setMovies([]);
+  // };
 
   useEffect(() => {
+    setMovies([]);
+  }, [name]);
+
+  useEffect(() => {
+    // if (!query) {
+    //   return null;
+    // }
     const fetchSearch = async () => {
       setLoading(true);
       try {
@@ -43,10 +51,10 @@ export default function MoviesPage() {
     fetchSearch();
   }, [query, page]);
 
-  // const onSearch = ({ name }) => {
-  //   setName(name);
-  //   setPage(1);
-  // };
+  const onSearch = ({ name }) => {
+    setName(name);
+    setPage(1);
+  };
 
   const loadMore = () => {
     setPage(prevPage => prevPage + 1);
@@ -59,8 +67,9 @@ export default function MoviesPage() {
       {loading && <Loader />}
       {error && <p>Movies not found.... </p>}
       {isPosts && <MoviesSearchPage items={movies} />}
-      <Outlet />
+
       {isPosts && <Button onClick={loadMore} />}
+      <Outlet />
     </div>
   );
 }

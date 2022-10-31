@@ -10,6 +10,7 @@ export default function HomePageLink({ items, onClick }) {
     <ul className={css.ImageGallery}>
       {items.map(item => (
         <HomePageLinkItems
+          id={item.id}
           key={item.id}
           onClick={onClick}
           name={item.title ? item.title : item.name}
