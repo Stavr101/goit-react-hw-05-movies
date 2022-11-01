@@ -6,6 +6,7 @@ import css from '../../styles.module.css';
 export const BASE_URL_IMG = 'https://image.tmdb.org/t/p/w500';
 
 export default function HomePageLink({ items, onClick }) {
+
   return (
     <ul className={css.ImageGallery}>
       {items.map(item => (

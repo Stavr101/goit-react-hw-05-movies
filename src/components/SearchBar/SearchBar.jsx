@@ -15,13 +15,6 @@ export default function SearchBar({ onSubmit }) {
   const handleSubmit = e => {
     e.preventDefault();
     onSubmit(name);
-    reset();
-  };
-
-  const reset = () => {
-    setName({
-      name: '',
-    });
     setName('');
   };
 

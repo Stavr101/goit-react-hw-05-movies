@@ -11,8 +11,7 @@ export default function AppBar() {
             Home
           </StyledLink>
           <StyledLink to="movies">Movies</StyledLink>
-
-          {/* <Outlet /> */}
+          {/* <StyledLink to="movies/:id">MoviesDetails</StyledLink> */}
         </nav>
       </Header>
       <Outlet />

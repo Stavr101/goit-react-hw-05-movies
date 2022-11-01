@@ -1,6 +1,3 @@
-// import { StyledLink } from 'components/App';
-// import axios from 'axios';
-// import Button from 'components/Button/LoadMoreButton';
 import { useEffect, useState } from 'react';
 import { getTrending } from 'shared/api/Api';
 import Loader from 'shared/Loader';
@@ -10,7 +7,8 @@ export default function HomePage() {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [name, setName] = useState('');
+
+  // eslint-disable-next-line no-unused-vars
   const [page, setPage] = useState(1);
   const isPosts = Boolean(items.length);
 
@@ -36,18 +34,11 @@ export default function HomePage() {
     fetchTrending();
   }, [page]);
 
-  //   const loadMore = () => {
-  //     setPage(prevPage => prevPage + 1);
-  //   };
-  //   console.log(items);
-  const openMoviesDetails = modalContent => {};
-
   return (
     <div>
       {loading && <Loader />}
       {error && <p>Спробуйте пізніше.... </p>}
-      {isPosts && <HomePageLink items={items} onClick={openMoviesDetails} />}
-      {/* {isPosts && <Button onClick={loadMore} />} */}
+      {isPosts && <HomePageLink items={items} />}
     </div>
   );
 }

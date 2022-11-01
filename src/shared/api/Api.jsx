@@ -14,36 +14,36 @@ export const getTrending = async () => {
 
 // поиск кинофильма по ключевому слову
 
-export const getSearch = async (name, page) => {
-  console.log(name);
+export const getSearch = async (query, page) => {
   const { data } = await axios.get(
-    `${BASE_URL}search/movie?api_key=${API_KEY}&language=en-US&page=${page}&query=${name}&include_adult=false`
+    `${BASE_URL}search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=${page}&include_adult=false`
   );
+
   return data;
 };
 // запрос полной информации о фильме
 
-export const getMovieId = async movieId => {
+export const getMovieId = async id => {
   const { data } = await axios.get(
-    `${BASE_URL}search/movie/${movieId}?api_key=${API_KEY}&language=en-US`
+    `${BASE_URL}movie/${id}?api_key=${API_KEY}&language=en-US`
   );
   return data;
 };
 
 // запрос информации о актёрском составе
 
-export const getMovieCredits = async movieId => {
+export const getMovieCredits = async id => {
   const { data } = await axios.get(
-    `${BASE_URL}search/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+    `${BASE_URL}movie/${id}/credits?api_key=${API_KEY}&language=en-US`
   );
   return data;
 };
 
 // запрос обзоров
 
-export const getMovieReviews = async movieId => {
+export const getMovieReviews = async id => {
   const { data } = await axios.get(
-    `${BASE_URL}search/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+    `${BASE_URL}movie/${id}/reviews?api_key=${API_KEY}&language=en-US&page=1`
   );
   return data;
 };
