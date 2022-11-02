@@ -3,10 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 
 import css from '../../styles.module.css';
 
-export default function HomePageLinkItems({ id, name, image, character }) {
+export default function MoviesPageLinkItems({ id, name, image, character }) {
   const location = useLocation();
   // const from = location.state?.from || '/homePage';
-  // console.log('homePage', location);
+  console.log('homePage', location);
   return (
     <li className={css.ImageGalleryItem}>
       <Link to={`/movies/${id}`} state={{ from: location }}>
@@ -16,7 +16,7 @@ export default function HomePageLinkItems({ id, name, image, character }) {
     </li>
   );
 }
-HomePageLinkItems.propTypes = {
+MoviesPageLinkItems.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
   image: PropTypes.string,

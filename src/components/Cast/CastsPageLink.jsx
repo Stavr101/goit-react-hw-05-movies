@@ -25,5 +25,5 @@ export default function CastsPageLink({ items }) {
   );
 }
 CastsPageLink.propTypes = {
-  items: PropTypes.string,
+  items: PropTypes.array,
 };

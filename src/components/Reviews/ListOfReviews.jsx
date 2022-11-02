@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 
 export default function ListOfReviews({ items }) {
-  console.log(items);
   return (
     <div>
       <ul>
@@ -16,5 +15,5 @@ export default function ListOfReviews({ items }) {
   );
 }
 ListOfReviews.propTypes = {
-  items: PropTypes.string,
+  items: PropTypes.array,
 };
