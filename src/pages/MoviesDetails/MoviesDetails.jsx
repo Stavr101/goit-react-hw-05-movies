@@ -119,10 +119,14 @@ export default function MoviesDetails() {
           <h4>Additional information</h4>
           <ul className={css.movieAdditionalInfoList}>
             <li>
-              <StyledLink to={castLink}>Cast</StyledLink>
+              <StyledLink to={castLink} state={{ from }}>
+                Cast
+              </StyledLink>
             </li>
             <li>
-              <StyledLink to={reviewsLink}>Reviews</StyledLink>
+              <StyledLink to={reviewsLink} state={{ from }}>
+                Reviews
+              </StyledLink>
             </li>
           </ul>
           <Outlet />
